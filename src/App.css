@@ -42,3 +42,11 @@ padding: .5em 0.5em;
   border-top: 1px solid white;
   border-radius: 20px;
 }
+@media screen and (max-width:400px) {
+  .vr{
+width:1em;
+  }
+  .row{
+    gap:.2em;
+  }
+}

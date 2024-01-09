@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Button } from '@mui/material';
+import { Button,Typography } from '@mui/material';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import sound from './sound.wav';
@@ -52,20 +52,20 @@ return false;
   return (
    <>
     <div className='Mainbody'>
-    {playing ? <VolumeUpIcon onClick={()=>setplaying(!playing)} sx={{fontSize:'1em', position:'absolute',top:'1em',right:'1em'}}/>:<VolumeOffIcon onClick={()=>setplaying(!playing)} sx={{fontSize:'1em', position:'absolute',top:'1em',right:'1em'}}/>}
+    {playing ? <VolumeUpIcon onClick={()=>setplaying(!playing)} sx={{fontSize:{xs:'.5em',md:'1em'}, position:'absolute',top:{xs:'.3em',md:'1em'},right:{xs:'.3em',md:'1em'}}}/>:<VolumeOffIcon onClick={()=>setplaying(!playing)} sx={{fontSize:{xs:'.5em',md:'1em'}, position:'absolute',top:{xs:'.3em',md:'1em'},right:{xs:'.3em',md:'1em'}}}/>}
       <div className='main'>
       {
 row.map((row)=>{
   return <div key={row} className='row'>
- <Button  className='column'  onClick={()=>handelClicked(row+0)} sx={{fontSize:'.7em'}}>
+ <Button className='column'   onClick={()=>handelClicked(row+0)} sx={{fontSize:{xs:'.3em',md:'.7em'}}}>
 {state[row+0] === null ? 0 : state[row+0]}
 <hr className='vr'/>
   </Button>
-  <Button  className='column'  onClick={()=>handelClicked(row+1)} sx={{fontSize:'.7em'}}>
+  <Button className='column'   onClick={()=>handelClicked(row+1)} sx={{fontSize:{xs:'.3em',md:'.7em'}}}>
 {state[row+1] === null ? 0 : state[row+1]}
 <hr className='vr'/>
   </Button>
-  <Button  className='column'  onClick={()=>handelClicked(row+2)} sx={{fontSize:'.7em'}}>
+  <Button className='column'  onClick={()=>handelClicked(row+2)} sx={{fontSize:{xs:'.3em',md:'.7em'}}}>
 {state[row+2] === null ? 0 : state[row+2]}
 <hr className='vr'/>
   </Button>
@@ -73,7 +73,7 @@ row.map((row)=>{
 })
       }
       </div>
-      <p>Player turn : {isXTurn ? '1st' : '2nd'}</p>
+      <Typography className='p' variant='body1'>Player turn : {isXTurn ? '1st' : '2nd'}</Typography>
     </div>
    </>
   );
